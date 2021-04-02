@@ -1,0 +1,7 @@
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\bin\Debug\Dendra.exe.config
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\bin\Debug\Dendra.exe
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\bin\Debug\Dendra.pdb
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\obj\Debug\Dendra.csprojAssemblyReference.cache
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\obj\Debug\Dendra.csproj.CoreCompileInputs.cache
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\obj\Debug\Dendra.exe
+C:\Users\Desyatov_D\source\repos\Dendra\Dendra\obj\Debug\Dendra.pdb

@@ -1,0 +1,25 @@
+C:\$Recycle.Bin
+C:\$WinREAgent
+C:\73B1E3608D85
+C:\Autodesk
+C:\ConsUserData
+C:\Dell
+C:\Documents and Settings
+C:\Downloads
+C:\DumpStack.log.tmp
+C:\hiberfil.sys
+C:\HP_LaserJet_Professional_M1530_MFP_Series
+C:\Intel
+C:\pagefile.sys
+C:\pdawin
+C:\PerfLogs
+C:\Program Files
+C:\Program Files (x86)
+C:\ProgramData
+C:\Recovery
+C:\Recovery.txt
+C:\swapfile.sys
+C:\System Volume Information
+C:\Users
+C:\Windows
+C:\ZondRes2D

@@ -9,7 +9,7 @@ namespace Dendra
 {
     class FileCrowler
     {
-        string path { get; set; }
+        public string path { get; set; }
 
         public string [] Cur_Subdirectories { get; }
 

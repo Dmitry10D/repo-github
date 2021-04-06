@@ -10,20 +10,15 @@ namespace Dendra
 {
     class Program
     {
-        
-
-        
-
         static void Main(string[] args)
         {
-
-
             DendraInterface A = new DendraInterface();
 
             FileCrowler B = new FileCrowler(@"C:/");
             DendraInterface.Frame_actualizer(A,B);
+            
             DendraInterface.Framing(A);
-
+            //DendraInterface.Cursor(B.Cur_Subdirectories[0]);
 
 
             Console.ReadLine();

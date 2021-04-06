@@ -40,7 +40,9 @@ namespace Dendra
 
         private char [,] frame { get; }
 
-        private char [,] main_field { get; }
+        private string[] Directory_list { get; set; }
+
+        private int main_field_str_num = 25;
 
         private int main_field_X;
         private int main_field_Y;
@@ -62,7 +64,6 @@ namespace Dendra
         private int path_field_height;
         private int path_field_width;
 
-        public string Path { get; set; }
         public DendraInterface ()
         {
             Console_Menu_Redactor();
@@ -90,10 +91,8 @@ namespace Dendra
             command_field_width = info_field_width;
 
             frame = Frame_Ctreator(frame);
-
-            
-            
         }
+        
         //Задание параметров консоли
         private int win_width = 120;
         private int win_height = 35;
@@ -180,19 +179,67 @@ namespace Dendra
 
         public static char[,] Frame_actualizer(DendraInterface A, FileCrowler B)
         {
-            for (var j = 0; j<B.Cur_Subdirectories.Length; j++)
-            {
-                char[] output = B.Cur_Subdirectories[j].ToCharArray();
+            //Текущая директория в блоке Path
+            Filling_Path(A, B);
+            
+            A.Directory_list = Concatinator(B.Cur_Subdirectories, B.Cur_Files);
 
-                for (var i = 0; i < Math.Min(A.main_field.GetLength(1),output.Length); i++)
-                {
-                    A.main_field[j, i] = output[i];
-                }
-            }
-
+            //Список подкаталогов отображается блоке Main_field
+            Filling_Main(A);
             return A.frame;
         }
 
+        //Текущая директория в блоке Path
+        private static void Filling_Path(DendraInterface A, FileCrowler B)
+        {
+            char[] output = B.path.ToCharArray();
+            
+            for (var i = 0; i<Math.Min((A.path_field_width), output.Length); i++)
+            {
+                A.frame[A.path_field_Y + i, A.path_field_X] = output[i];
+            }
+        }
+        //Заполнение блока main в массиве frame
+        private static void Filling_Main (DendraInterface A)
+        {
+            //Список подкаталогов отображается первым в блоке Main_field
+            for (var j = 0; j < Math.Min(A.Directory_list.Length, A.main_field_str_num); j++)
+            {
+                char[] output = A.Directory_list[j].ToCharArray();
+
+                for (var i = 0; i < Math.Min((A.main_field_width), output.Length); i++)
+                {
+                    A.frame[A.main_field_Y + i, A.main_field_X + j] = output[i];
+                }
+            }
+        }
+
+
+        
+        public static void Cursor(char input)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+        }
+
+        //Соединяет последовательно два массива
+        private static string[] Concatinator(string[] A, string[] B)
+        {
+            string[] abomination = new string[A.Length + B.Length];
+
+            for (var i = 0; i < A.Length; i++)
+            {
+                abomination[i] = A[i];
+            }
+            for (var i = 0; i < B.Length; i++)
+            {
+                abomination[A.Length + i] = B[i];
+            }
+            return abomination;
+        }
+
+        //Задание размера консоли и фона
         public void Windowing ()
         {
             Console.SetWindowSize(win_width, win_height);

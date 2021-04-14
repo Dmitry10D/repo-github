@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DendraInterface.cs" />
     <Compile Include="FileCrowler.cs" />
+    <Compile Include="Parser.cs" />
     <Compile Include="Pomoyka.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

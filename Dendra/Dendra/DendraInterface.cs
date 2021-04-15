@@ -36,9 +36,9 @@ namespace Dendra
         }
 //////////////////////////////////////////////////////////////////
 
-        private char [,] frame { get; }
+        public char [,] frame { get; set; }
 
-        private string[] Directory_list { get; set; }
+        public string[] Directory_list { get; set; }
 
         private int main_field_str_num = 25;
 
@@ -174,22 +174,12 @@ namespace Dendra
             }
         }
 
-        public static char[,] Frame_actualizer (DendraInterface A, FileCrowler B)
-        {
-            //Текущая директория в блоке Path
-            Filling_Path(A, B);
-            
-            A.Directory_list = Concatinator(B.Cur_Subdirectories, B.Cur_Files);
-
-            //Список подкаталогов отображается блоке Main_field
-            Filling_Main(A);
-            return A.frame;
-        }
+        
 
         //Заполнение блока Path в массиве frame
-        private static void Filling_Path(DendraInterface A, FileCrowler B)
+        public static void Filling_Path(DendraInterface A, string path)
         {
-            char[] output = B.path.ToCharArray();
+            char[] output = path.ToCharArray();
             
             for (var i = 0; i<Math.Min((A.path_field_width), output.Length); i++)
             {
@@ -197,7 +187,7 @@ namespace Dendra
             }
         }
         //Заполнение блока main в массиве frame
-        private static void Filling_Main (DendraInterface A)
+        public static void Filling_Main (DendraInterface A)
         {
             //Список подкаталогов отображается первым в блоке Main_field
             for (var j = 0; j < Math.Min(A.Directory_list.Length, A.main_field_str_num); j++)
@@ -211,20 +201,20 @@ namespace Dendra
             }
         }
 
-        public static void Cursor(int str_number, DendraInterface A)
-        {
-            Console.SetCursorPosition(A.main_field_Y, A.main_field_X);
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            for (var i = A.main_field_Y; i<A.main_field_width; ++i)
-            {
-                Console.Write ("\r{0}", A.frame[str_number, i]); 
+        //public static void Cursor(int str_number, DendraInterface A)
+        //{
+        //    Console.SetCursorPosition(A.main_field_Y, A.main_field_X);
+        //    Console.BackgroundColor = ConsoleColor.White;
+        //    Console.ForegroundColor = ConsoleColor.Black;
+        //    for (var i = A.main_field_Y; i<A.main_field_width; ++i)
+        //    {
+        //        Console.Write ("\r{0}", A.frame[str_number, i]); 
                 
-            }
-        }
+        //    }
+        //}
 
         //Соединяет последовательно два массива
-        private static string[] Concatinator(string[] A, string[] B)
+        public static string[] Concatinator(string[] A, string[] B)
         {
             string[] abomination = new string[A.Length + B.Length];
 

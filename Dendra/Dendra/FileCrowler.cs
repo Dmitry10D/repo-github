@@ -9,7 +9,7 @@ namespace Dendra
 {
     class FileCrowler
     {
-        enum Commands { Open, Copy, Past, Move, Delete, Rename, Info, New_Folder };
+        public enum Commands { Open, Copy, Move, Delete, Rename, Info, New_Folder };
         public string path { get; set; }
 
         public string [] Cur_Subdirectories { get; }
@@ -30,6 +30,7 @@ namespace Dendra
             }
             else
             {
+                this.path = @"C:/";
                 Console.WriteLine("Directory or file does not exist");
             }
             
@@ -38,6 +39,28 @@ namespace Dendra
             
         }
 
+        public static void Command (int com_id, string path)
+        {
+            
+            switch (com_id)
+            {
+                case 1:
+                    Copy(path);
+                    break;
+                case 2:
+                    
+                    break;
+            }
+        }
+
+        private static void Copy (string input)
+        {
+            string[] substr = Parser.Split_all_spaces(input);
+            string source_path = substr [0];
+            string dest_path = substr [1];
+
+            File.Copy(source_path, dest_path);
+        }
        
 
     }

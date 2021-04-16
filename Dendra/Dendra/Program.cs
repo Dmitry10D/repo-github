@@ -10,7 +10,6 @@ namespace Dendra
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             DendraInterface A = new DendraInterface();
@@ -24,7 +23,6 @@ namespace Dendra
                 string input = Console.ReadLine();
                 Console.Clear();
                 Parser P = new Parser(input);
-                FileCrowler C = new FileCrowler(P.str);
                 Controller(P);
             }    
         }
@@ -47,10 +45,7 @@ namespace Dendra
             }
             else
             {
-                
-                   FileCrowler.Command (P.command, P.str);
-                
-                
+                FileCrowler.Command (P.command, P.str);
             }
         }
 

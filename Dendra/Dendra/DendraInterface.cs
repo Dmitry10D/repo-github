@@ -164,6 +164,7 @@ namespace Dendra
 
         public static void Framing (DendraInterface A)
         {
+            Console.Clear();
             //Рисовка массива построчно
             for (var j = 0; j < A.frame.GetLength(1); j++)
             {
@@ -190,7 +191,8 @@ namespace Dendra
         public static void Filling_Main (DendraInterface A)
         {
             //Список подкаталогов отображается первым в блоке Main_field
-            for (var j = 0; j < Math.Min(A.Directory_list.Length, A.main_field_str_num); j++)
+            int main_str_num = Math.Min(A.Directory_list.Length, A.main_field_str_num);
+            for (var j = 0; j < main_str_num; j++)
             {
                 char[] output = A.Directory_list[j].ToCharArray();
 
@@ -199,19 +201,16 @@ namespace Dendra
                     A.frame[A.main_field_Y + i, A.main_field_X + j] = output[i];
                 }
             }
-        }
 
-        //public static void Cursor(int str_number, DendraInterface A)
-        //{
-        //    Console.SetCursorPosition(A.main_field_Y, A.main_field_X);
-        //    Console.BackgroundColor = ConsoleColor.White;
-        //    Console.ForegroundColor = ConsoleColor.Black;
-        //    for (var i = A.main_field_Y; i<A.main_field_width; ++i)
-        //    {
-        //        Console.Write ("\r{0}", A.frame[str_number, i]); 
-                
-        //    }
-        //}
+            ////Заполнение пробелами массива 
+            //for (var j = main_str_num; j < A.main_field_height; j++)
+            //{
+            //    for (var i = 0; i < A.main_field_width; i++)
+            //    {
+            //        A.frame[A.main_field_Y + i, A.main_field_X + j] = ' ';
+            //    }
+            //}
+        }
 
         //Соединяет последовательно два массива
         public static string[] Concatinator(string[] A, string[] B)

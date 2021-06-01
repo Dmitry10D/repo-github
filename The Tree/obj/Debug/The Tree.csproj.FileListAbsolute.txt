@@ -1,0 +1,7 @@
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\bin\Debug\The Tree.exe.config
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\bin\Debug\The Tree.exe
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\bin\Debug\The Tree.pdb
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\obj\Debug\The Tree.csprojAssemblyReference.cache
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\obj\Debug\The Tree.csproj.CoreCompileInputs.cache
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\obj\Debug\The Tree.exe
+C:\Users\Desyatov_D\source\repos\Algorithms Lesson 4\The Tree\obj\Debug\The Tree.pdb
